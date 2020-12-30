@@ -713,3 +713,120 @@ assert(isVowel("banana"), false, "Exercise 43");
 assert(isVowel("Q"), false, "Exercise 43");
 assert(isVowel("y"), false, "Exercise 43");
 addToDone("Exercise 43 is correct.")
+
+
+// Exercise 44
+// Write a function definition named hasVowels that takes in value and returns true if the string contains any vowels.
+
+function hasVowels(x) {
+    var A = x.includes('a')
+    var E = x.includes('e')
+    var I = x.includes('i')
+    var O = x.includes('o')
+    var U = x.includes('u')
+
+    if ( A || E || I || O || U) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+assert(hasVowels("banana"), true, "Exercise 44");
+assert(hasVowels("ubuntu"), true, "Exercise 44");
+assert(hasVowels("QQQQ"), false, "Exercise 44");
+assert(hasVowels("wyrd"), false, "Exercise 44");
+addToDone("Exercise 44 is correct.")
+
+
+// Exercise 45
+// Write a function definition named countVowels that takes in value and returns the count of the nubmer of vowels in a sequence.
+
+function countVowels(x){
+    var vowelList = 'AEIOUaeiou';
+    var vowelsCount = 0;
+    for(var i = 0; i < x.length ; i++) {
+        if (vowelList.indexOf(x[i]) !== -1) {
+            vowelsCount += 1;
+        }
+    } return vowelsCount;
+}
+
+assert(countVowels("banana"), 3, "Exercise 45");
+assert(countVowels("ubuntu"), 3, "Exercise 45");
+assert(countVowels("mango"), 2, "Exercise 45");
+assert(countVowels("QQQQ"), 0, "Exercise 45");
+assert(countVowels("wyrd"), 0, "Exercise 45");
+addToDone("Exercise 45 is correct.")
+
+
+// Exercise 46
+// Write a function definition named removeVowels that takes in string and returns the string without any vowels
+
+function removeVowels(string){
+    return string.replace(/['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']/g, "");
+
+}
+
+assert(removeVowels("banana"), "bnn", "Exercise 46");
+assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
+assert(removeVowels("mango"), "mng", "Exercise 46");
+assert(removeVowels("QQQQ"), "QQQQ", "Exercise 46");
+addToDone("Exercise 46 is correct.")
+
+
+// Exercise 47
+// Write a function definition named startsWithVowel that takes in string and true if the string starts with a vowel
+
+function startsWithVowel(string){
+    return (isVowel(string[0]));
+}
+
+assert(startsWithVowel("ubuntu"), true, "Exercise 47");
+assert(startsWithVowel("banana"), false, "Exercise 47");
+assert(startsWithVowel("mango"), false, "Exercise 47");
+addToDone("Exercise 47 is correct.")
+
+
+// Exercise 48
+// Write a function definition named endsWithVowel that takes in string and true if the string ends with a vowel
+
+function endsWithVowel(string){
+    var end = string.split("").reverse().join("");
+    return (isVowel(end[0]));
+}
+
+assert(endsWithVowel("ubuntu"), true, "Exercise 48");
+assert(endsWithVowel("banana"), true, "Exercise 48");
+assert(endsWithVowel("mango"), true, "Exercise 48");
+assert(endsWithVowel("spinach"), false, "Exercise 48");
+addToDone("Exercise 48 is correct.")
+
+
+// Exercise 49
+// Write a function definition named startsAndEndsWithVowel that takes in string and returns true if the string starts and ends with a vowel
+
+function startsAndEndsWithVowel(string){
+    var end = string.split("").reverse().join("");
+    return (isVowel(string[0])) && (isVowel(end[0]));
+}
+
+assert(startsAndEndsWithVowel("ubuntu"), true, "Exercise 49");
+assert(startsAndEndsWithVowel("banana"), false, "Exercise 49");
+assert(startsAndEndsWithVowel("mango"), false, "Exercise 49");
+addToDone("Exercise 49 is correct.")
+
+
+// Exercise 50
+// Write a function definition named first that takes in sequence and returns the first value of that sequence.
+
+function first(input){
+    return input[0];
+}
+
+assert(first("ubuntu"), "u", "Exercise 50");
+assert(first([1, 2, 3]), 1, "Exercise 50");
+assert(first(["JS", "is", "awesome"]), "JS", "Exercise 50");
+addToDone("Exercise 50 is correct.")
+
+
