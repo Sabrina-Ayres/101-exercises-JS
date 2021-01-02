@@ -939,14 +939,48 @@ assert(firstAndLast(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "g
 addToDone("Exercise 58 is correct.")
 
 
+
+
 // Exercise 59
 // Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
 
-function firstToLast(array){
-    return array.push(array.shift());
+function firstToLast(input){
+    input.push(input.shift());
+    return input;
 }
 
 assert(firstToLast([1, 2, 3, 4]), [2, 3, 4, 1], "Exercise 59");
 assert(firstToLast(["JS", "is", "awesome"]), ["is", "awesome", "JS"], "Exercise 59");
 assert(firstToLast(["strawberry", "kiwi", "mango", "guava"]), ["kiwi", "mango", "guava", "strawberry"], "Exercise 59");
 addToDone("Exercise 59 is correct.")
+
+
+
+// Exercise 60
+// Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
+
+function sumAll(num){
+    return num.reduce(function(a,b){
+        return a + b
+    }, 0);
+}
+
+assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
+assert(sumAll([3, 3, 3]), 9, "Exercise 60");
+assert(sumAll([0, 5, 6]), 11, "Exercise 60");
+addToDone("Exercise 60 is correct.")
+
+
+
+//  Exercise 61
+//  Write a function definition named mean that takes in sequence of numbers and returns the average value
+
+function mean(nums){
+    return nums.reduce((a, b) => (a + b)) / nums.length;
+}
+
+assert(mean([1, 2, 3, 4]), 2.5, "Exercise 61");
+assert(mean([3, 3, 3]), 3, "Exercise 61");
+assert(mean([1, 5, 6]), 4, "Exercise 61");
+addToDone("Exercise 61 is correct.")
+
