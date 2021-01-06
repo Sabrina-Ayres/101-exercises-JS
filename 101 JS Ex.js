@@ -1003,3 +1003,20 @@ assert(median([1, 2, 3]), 2.0, "Exercise 62");
 assert(median([1, 5, 6]), 5.0, "Exercise 62");
 assert(median([1, 2, 5, 6]), 3.5, "Exercise 62");
 addToDone("Exercise 62 is correct.")
+
+
+// Exercise 63
+// Write a function definition named maxMinusMin that takes in an array of numbers and returns the difference of the maximum minus theminimum.
+
+function maxMinusMin(num){
+    var max = Math.max.apply(null, num);
+    var min = Math.min.apply(null, num);
+    return max - min;
+}
+
+assert(maxMinusMin([1, 2, 2, 8, 3, 4]), 7, "Exercise 63");
+assert(maxMinusMin([1, 1, 2, 3, 9]), 8, "Exercise 63");
+assert(maxMinusMin([2, 2, 3, 3, 3, 7]), 5, "Exercise 63");
+addToDone("Exercise 63 is correct.")
+
+
