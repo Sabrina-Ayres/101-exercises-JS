@@ -984,3 +984,22 @@ assert(mean([3, 3, 3]), 3, "Exercise 61");
 assert(mean([1, 5, 6]), 4, "Exercise 61");
 addToDone("Exercise 61 is correct.")
 
+// // Exercise 62
+// // Write a function definition named median that takes in sequence of numbers and returns the average value
+
+function median(nums){
+    if(nums.length === 0) return 0;
+    nums.sort(function(a,b){
+        return a-b;
+    });
+    var half = Math.floor(nums.length / 2);
+    if (nums.length % 2)
+        return nums[half];
+    return (nums[half - 1] + nums[half]) / 2.0;
+}
+
+assert(median([1, 2, 3, 4, 5]), 3.0, "Exercise 62");
+assert(median([1, 2, 3]), 2.0, "Exercise 62");
+assert(median([1, 5, 6]), 5.0, "Exercise 62");
+assert(median([1, 2, 5, 6]), 3.5, "Exercise 62");
+addToDone("Exercise 62 is correct.")
