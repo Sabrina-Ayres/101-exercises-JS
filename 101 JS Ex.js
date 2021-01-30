@@ -1620,3 +1620,104 @@ function getTaxRate(price) {
 
 assert(getTaxRate(shoppingCart), .08, "Exercise 96");
 addToDone("Exercise 96 is complete")
+
+
+// Exercise 97
+// Write a function named numberOfItemTypes that takes in the shopping cart as input and returns the number of unique item types in the shopping cart.
+// We're not yet using the quantity of each item, but rather focusing on determining how many different types of items are in the cart.
+
+function numberOfItemTypes(arr){
+    var unique = [];
+    for(var i = 0; i < arr.items.length; i++) {
+        if(unique.includes(arr.items[i].title)) {
+            continue;
+        }
+        unique.push(arr.items[i].title);
+    }
+    return unique.length;
+}
+
+
+assert(numberOfItemTypes(shoppingCart), 5, "Exercise 97");
+addToDone("Exercise 97 is complete.")
+
+
+
+// Exercise 98
+// Write a function named totalNumberOfItems that takes in the shopping cart as input and returns the total number all item quantities.
+// This should return the sum of all of the quantities from each item type
+
+function totalNumberOfItems(shoppingCart) {
+    var sum = 0;
+    for (var i = 0; i < shoppingCart.items.length; i++) {
+        sum += shoppingCart.items[i].quantity;
+    }
+    return sum;
+}
+
+assert(totalNumberOfItems(shoppingCart), 17, "Exercise 98");
+addToDone("Exercise 98 is complete.")
+
+
+
+// Exercise 99
+// Write a function named getAverageItemPrice that takes in the shopping cart as an input and returns the average of all the item prices.
+// Hint - This should determine the total price divided by the number of types of items. This does not account for each item type's quantity.\
+
+function getAverageItemPrice(shoppingCart) {
+    var sum = 0;
+    for (var i = 0; i < shoppingCart.items.length; i++) {
+        sum += shoppingCart.items[i].price;
+    }
+    return sum / shoppingCart.items.length;
+}
+
+assert(getAverageItemPrice(shoppingCart), 2.1420000000000003, "Exercise 99");
+addToDone("Exercise 99 is complete.")
+
+
+
+// Exercise 100
+// Write a function named getAverageSpentPerItem that takes in the shopping cart and returns the average of summing each item's quanties times that item's price.
+// Hint: You may need to set an initial total price and total total quantity to zero, then sum up and divide that total price by the total quantity
+
+function getAverageSpentPerItem(shoppingCart) {
+    var itemPrice = 0;
+    var itemQuantity = 0;
+    for (var i = 0; i < shoppingCart.items.length; i++) {
+        itemPrice += shoppingCart.items[i].price * shoppingCart.items[i].quantity;
+        itemQuantity += shoppingCart.items[i].quantity;
+    } return itemPrice / itemQuantity;
+}
+
+assert(getAverageSpentPerItem(shoppingCart), 1.333529411764706, "Exercise 100");
+addToDone("Exercise 100 is complete.")
+
+
+// Exercise 101
+// Write a function named mostSpentOnItem that takes in the shopping cart as input and returns the object associated with the item that has the highest price*quantity.
+// Be sure to do this as programmatically as possible.
+// Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
+// Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
+
+function mostSpentOnItem(shoppingCart) {
+
+    var mostSpent = {
+        "title": "random",
+        "price": 0,
+        "quantity": 0
+    }
+
+    for (var i = 0; i < shoppingCart.items.length; i++) {
+        if ((shoppingCart.items[i].price * shoppingCart.items[i].quantity) > (mostSpent.price * mostSpent.quantity)) {
+            mostSpent = shoppingCart.items[i];
+        }
+    }   return mostSpent;
+};
+
+assert(mostSpentOnItem(shoppingCart), {
+    "title": "chocolate",
+    "price": 0.75,
+    "quantity": 9
+}, "Exercise 101");
+addToDone("Exercise 101 is complete.")
