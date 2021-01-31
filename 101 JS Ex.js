@@ -1721,3 +1721,10 @@ assert(mostSpentOnItem(shoppingCart), {
     "quantity": 9
 }, "Exercise 101");
 addToDone("Exercise 101 is complete.")
+
+
+
+
+
+///////////////////////////////////////////////////
+
